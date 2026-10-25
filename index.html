@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Senior Systems Developer | UPLB CFNR Office of the College Secretary &amp; Commercial Engineer</title>
+  <meta name="description" content="Portfolio of a Systems Developer at the UPLB College of Forestry &amp; Natural Resources, Office of the College Secretary (OCS). Document tracking, academic records, and commercial web apps.">
+  
+  <!-- Open Graph / Link Previews for WhatsApp, LinkedIn, Slack -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Systems Developer | UPLB CFNR Office of the College Secretary">
+  <meta property="og:description" content="Mission-critical academic administrative systems &amp; commercial web applications. Built at the foot of Mt. Makiling.">
+  <meta property="og:site_name" content="UPLB CFNR OCS Developer Portfolio">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Forest Leaves Canvas for Canopy Mode -->
+  <canvas id="canopy-canvas" class="canopy-canvas" aria-hidden="true"></canvas>
+
+  <!-- Top Navigation -->
+  <header class="site-header" id="top">
+    <div class="nav-container">
+      <a href="#top" class="brand-monogram">
+        <span class="monogram-box">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+        </span>
+        <div class="brand-text-group">
+          <span class="brand-text">UPLB CFNR OCS &amp; Commercial Systems</span>
+          <span class="brand-subtext">Office of the College Secretary · Mt. Makiling</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="#work" class="nav-link">Selected Systems</a>
+        <a href="#capabilities" class="nav-link">Architecture</a>
+        <a href="#services" class="nav-link">Client Services</a>
+        <a href="#about" class="nav-link">Office Background</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Theme Toggle (Light / Dark) -->
+        <button type="button" class="btn-theme-toggle" id="theme-toggle-btn" title="Switch Theme (Light / Dark)" aria-label="Toggle Light and Dark Mode">
+          <svg class="theme-icon sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden>
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <span id="theme-btn-text">Theme</span>
+        </button>
+
+        <!-- Fun Canopy Delight Toggle -->
+        <button type="button" class="btn-canopy-toggle" id="canopy-toggle-btn" title="Toggle Makiling Canopy Atmosphere" aria-label="Toggle Forest Canopy Leaves Animation">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+          </svg>
+          <span id="canopy-btn-text">Canopy Mode</span>
+        </button>
+
+        <a href="#contact" class="btn btn-primary btn-sm">Consultation</a>
+      </div>
+
+      <button type="button" class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="mobile-drawer" hidden>
+      <nav class="mobile-nav-links">
+        <a href="#work" class="mobile-link">Selected Systems</a>
+        <a href="#capabilities" class="mobile-link">Architecture</a>
+        <a href="#services" class="mobile-link">Client Services</a>
+        <a href="#about" class="mobile-link">Office Background</a>
+        <a href="#contact" class="mobile-link mobile-link-highlight">Inquire for Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-content">
+          
+          <!-- Heritage & Location Pill -->
+          <div class="hero-location-pill">
+            <span class="pill-dot forestry" aria-hidden="true"></span>
+            <span>Office of the College Secretary (OCS) · UPLB CFNR</span>
+            <span class="pill-divider" aria-hidden="true">·</span>
+            <span class="coords-badge">Mt. Makiling · 14.1378° N</span>
+          </div>
+
+          <h1 class="hero-headline">
+            Institutional administrative precision.<br>
+            Modern commercial web craft.
+          </h1>
+
+          <p class="hero-description">
+            I engineer document tracking platforms, student records engines, and automated clearance pipelines for the <strong>Office of the College Secretary at UPLB College of Forestry and Natural Resources</strong>, and build performant, reliable custom web applications for independent businesses.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#work" class="btn btn-primary">
+              <span>View Case Studies &amp; Demos</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Start a Project Inquiry</span>
+            </a>
+          </div>
+
+          <!-- Proof Metrics Strip -->
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <span class="metric-value">10,000+</span>
+              <span class="metric-label">Academic Documents Tracked</span>
+              <span class="metric-sub">Zero lost petitions, clearances, or grade transmittals</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-value">100%</span>
+              <span class="metric-label">Curricular Audit Accuracy</span>
+              <span class="metric-sub">Automated prerequisite validation and honors eligibility</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-value">14+ Shipped</span>
+              <span class="metric-label">Commercial Client Products</span>
+              <span class="metric-sub">B2B portals, booking apps, and operational dashboards</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Section with Bifurcated Track Switcher -->
+    <section class="work-section" id="work">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Selected Engineering Work</h2>
+          <p class="section-lead">
+            Explore state university administrative platforms and independent commercial client solutions.
+          </p>
+        </div>
+
+        <!-- Filter / Perspective Controls -->
+        <div class="filter-toolbar" role="tablist" aria-label="Project Perspective Filters">
+          <button type="button" class="filter-btn active" role="tab" aria-selected="true" data-filter="all">
+            <span class="filter-name">All Projects</span>
+            <span class="filter-count" id="count-all">6</span>
+          </button>
+          <button type="button" class="filter-btn track-forestry-btn" role="tab" aria-selected="false" data-filter="forestry">
+            <span class="track-indicator forestry" aria-hidden="true"></span>
+            <span class="filter-name">UPLB CFNR OCS Systems</span>
+            <span class="filter-count" id="count-forestry">3</span>
+          </button>
+          <button type="button" class="filter-btn track-commercial-btn" role="tab" aria-selected="false" data-filter="commercial">
+            <span class="track-indicator commercial" aria-hidden="true"></span>
+            <span class="filter-name">Commercial Client Projects</span>
+            <span class="filter-count" id="count-commercial">3</span>
+          </button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projects-grid">
+
+          <!-- Project 1 (OCS Document Tracker) -->
+          <article class="project-card track-forestry" data-category="forestry" data-id="ocs-document-tracker">
+            <div class="project-preview-frame">
+              <div class="preview-browser-header">
+                <span class="preview-dot"></span>
+                <span class="preview-dot"></span>
+                <span class="preview-dot"></span>
+                <span class="preview-title-bar">ocs.cfnr.uplb.edu.ph/tracker</span>
+              </div>
+              <div class="preview-media-container">
+                <img src="assets/screenshots/ocs-document-tracker.gif" 
+                     alt="OCS Document Tracker Interface" 
+                     class="project-media"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="media-placeholder-hint">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                  <span>Drop <code>ocs-document-tracker.gif</code> / <code>.png</code> in <code>assets/screenshots/</code></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-meta">
+              <span class="track-badge forestry">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                UPLB OCS Core System
+              </span>
+              <span class="project-status">Office Production</span>
+            </div>
+            <h3 class="project-title">OCS Academic Document Tracking &amp; Verification Platform</h3>
+            <p class="project-summary">
+              Automated workflow engine for tracking student petitions, True Copy of Grades (TCG), Leaves of Absence (LOA), and clearances across office units with cryptographic QR receipt verification.
+            </p>
+            <div class="project-tags">
+              <span class="tag">PHP / MySQL</span>
+              <span class="tag">QR Barcode Tracking</span>
+              <span class="tag">Role-Based Access</span>
+              <span class="tag">Audit Logs</span>
+            </div>
+            <div class="card-footer">
+              <span class="metric-pill">10,000+ Requests Routed</span>
+              <button type="button" class="btn-text open-modal-btn" data-project="ocs-document-tracker">
+                Inspect Architecture &rarr;
+              </button>
+            </div>
+          </article>
+
+          <!-- Project 2 (Graduation Evaluation Engine) -->
+          <article class="project-card track-forestry" data-category="forestry" data-id="graduation-audit">
+            <div class="project-preview-frame">
+              <div class="preview-browser-header">
+                <span class="preview-dot"></span>
+                <span class="preview-dot"></span>
+                <span class="preview-dot"></span>
+                <span class="preview-title-bar">ocs.cfnr.uplb.edu.ph/graduation-audit</span>
+              </div>
+              <div class="preview-media-container">
+                <img src="assets/screenshots/graduation-audit.gif" 
+                     alt="Curricular Audit & Graduation Evaluation Engine" 
+                     class="project-media"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="media-placeholder-hint">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                  <span>Drop <code>graduation-audit.gif</code> / <code>.png</code> in <code>assets/screenshots/</code></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-meta">
+              <span class="track-badge forestry">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                UPLB OCS Records Engine
+              </span>
+              <span class="project-status">Office Production</span>
+            </div>
+            <h3 class="project-title">Student Curricular Evaluation &amp; Clearance Engine</h3>
+            <p class="project-summary">
+              Automated graduation audit platform checking curricular checklists, General Education (GE) prerequisites, scholastic delinquency thresholds, and Latin honors eligibility.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Curricular Rules Engine</span>
+              <span class="tag">Automated PDF Transcripts</span>
+              <span class="tag">Deficiency Detection</span>
+              <span class="tag">GWA Calculator</span>
+            </div>
+            <div class="card-footer">
+              <span class="metric-pill">100% Curricular Verification</span>
+              <button type="button" class="btn-text open-modal-btn" data-project="graduation-audit">
+                Inspect Architecture &rarr;
+              </button>
+            </div>
+          </article>
+
+          <!-- Project 3 (Prerequisite Waiver & Registration) -->
+          <article class="project-card track-forestry" data-category="forestry" data-id="prerequisite-waiver">
+            <div class="project-preview-frame">
+              <div class="preview-browser-header">
+                <span class="preview-dot"></span>
+                <span class="preview-dot"></span>
+                <span class="preview-dot"></span>
+                <span class="preview-title-bar">ocs.cfnr.uplb.edu.ph/waivers</span>
+              </div>
+              <div class="preview-media-container">
+                <img src="assets/screenshots/prerequisite-waiver.gif" 
+                     alt="Prerequisite Waiver & Endorsement Core" 
+                     class="project-media"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="media-placeholder-hint">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                  <span>Drop <code>prerequisite-waiver.gif</code> / <code>.png</code> in <code>assets/screenshots/</code></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-meta">
+              <span class="track-badge forestry">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                UPLB OCS Workflow
+              </span>
+              <span class="project-status">Office Production</span>
+            </div>
+            <h3 class="project-title">Course Prerequisite Waiver &amp; Enrollment Endorsement Core</h3>
+            <p class="project-summary">
+              Multi-tier approval pipeline (Academic Adviser &rarr; Department Chair &rarr; College Secretary) for course prerequisite waivers, cross-registrations, and overload petitions.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Multi-tier RBAC</span>
+              <span class="tag">Digital Signatures</span>
+              <span class="tag">Slot Reservations</span>
+              <span class="tag">Automated Notifications</span>
+            </div>
+            <div class="card-footer">
+              <span class="metric-pill">48hr Turnaround (was 2 weeks)</span>
+              <button type="button" class="btn-text open-modal-btn" data-project="prerequisite-waiver">
+                Inspect Architecture &rarr;
+              </button>
+            </div>
+          </article>
+
+          <!-- Project 4 (Commercial: Atlas Trucking Platform) -->
+          <article class="project-card track-commercial" data-category="commercial" data-id="atlas-trucking">
+            <div class="project-preview-frame">
+              <div class="preview-browser-header">
+                <span class="preview-dot"></span>
+                <span class="preview-dot"></span>
+                <span class="preview-dot"></span>
+                <span class="preview-title-bar">admin.atlastransport.ph/dashboard</span>
+              </div>
+              <div class="preview-media-container">
+                <img src="assets/screenshots/atlas/screenshots/08_admin_dashboard.png" 
+                     alt="Atlas Trucking Platform Admin Console" 
+                     class="project-media">
+              </div>
+            </div>
+
+            <div class="card-meta">
+              <span class="track-badge commercial">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                Atlas Transport Corporation
+              </span>
+              <span class="project-status">Production Monorepo</span>
+            </div>
+            <h3 class="project-title">Atlas Trucking &amp; Multi-Hub Freight Operations Platform</h3>
+            <p class="project-summary">
+              Enterprise inter-island freight management system handling multi-hub operations (Manila, Cebu, Davao, Odiongan). Integrates real-time milestone tracking, cryptographic SHA-256 seal verification, mobile barcode intake, and automated billing manifests.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Next.js 16 (Turbopack)</span>
+              <span class="tag">React Native / Expo 53</span>
+              <span class="tag">Firebase Firestore</span>
+              <span class="tag">Turborepo</span>
+              <span class="tag">Cryptographic Seals</span>
+            </div>
+            <div class="card-footer">
+              <span class="metric-pill">1,222 Commits &middot; Multi-Island Fleet</span>
+              <button type="button" class="btn-text open-modal-btn" data-project="atlas-trucking">
+                Inspect Architecture &rarr;
+              </button>
+            </div>
+          </article>
+
+          <!-- Project 5 (Commercial Booking SaaS) -->
+          <article class="project-card track-commercial" data-category="commercial" data-id="saas-scheduler">
+            <div class="project-preview-frame">
+              <div class="preview-browser-header">
+                <span class="preview-dot"></span>
+                <span class="preview-dot"></span>
+                <span class="preview-dot"></span>
+                <span class="preview-title-bar">book.consultingclinic.io</span>
+              </div>
+              <div class="preview-media-container">
+                <img src="assets/screenshots/saas-scheduler.gif" 
+                     alt="Commercial Booking Platform" 
+                     class="project-media"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="media-placeholder-hint">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                  <span>Drop <code>saas-scheduler.gif</code> / <code>.png</code> in <code>assets/screenshots/</code></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-meta">
+              <span class="track-badge commercial">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                Commercial Client
+              </span>
+              <span class="project-status">Deployed Client Product</span>
+            </div>
+            <h3 class="project-title">High-Converting Client Booking &amp; Intake Platform</h3>
+            <p class="project-summary">
+              Custom scheduling solution designed for professional consultancies. Features multi-timezone calendar synchronization, automated SMS reminders, and integrated intake forms.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Google / Outlook API</span>
+              <span class="tag">Twilio SMS</span>
+              <span class="tag">Webhook Automations</span>
+              <span class="tag">Payment Gateway</span>
+            </div>
+            <div class="card-footer">
+              <span class="metric-pill">4.2x intake form completion</span>
+              <button type="button" class="btn-text open-modal-btn" data-project="saas-scheduler">
+                Inspect Architecture &rarr;
+              </button>
+            </div>
+          </article>
+
+          <!-- Project 6 (Commercial Cloud POS) -->
+          <article class="project-card track-commercial" data-category="commercial" data-id="retail-pos">
+            <div class="project-preview-frame">
+              <div class="preview-browser-header">
+                <span class="preview-dot"></span>
+                <span class="preview-dot"></span>
+                <span class="preview-dot"></span>
+                <span class="preview-title-bar">pos.restaurantcloud.app</span>
+              </div>
+              <div class="preview-media-container">
+                <img src="assets/screenshots/retail-pos.gif" 
+                     alt="Commercial Restaurant POS" 
+                     class="project-media"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="media-placeholder-hint">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                  <span>Drop <code>retail-pos.gif</code> / <code>.png</code> in <code>assets/screenshots/</code></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-meta">
+              <span class="track-badge commercial">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                Commercial Client
+              </span>
+              <span class="project-status">Deployed Client Product</span>
+            </div>
+            <h3 class="project-title">Cloud POS &amp; Real-Time Kitchen Display System</h3>
+            <p class="project-summary">
+              Progressive web application powering multi-station restaurant ordering, real-time ticket routing to kitchen displays via WebSockets, and end-of-day revenue reconciliation.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Offline-First PWA</span>
+              <span class="tag">Local Cache Sync</span>
+              <span class="tag">Thermal Printing</span>
+              <span class="tag">Hardware Integration</span>
+            </div>
+            <div class="card-footer">
+              <span class="metric-pill">&lt;150ms ticket latency</span>
+              <button type="button" class="btn-text open-modal-btn" data-project="retail-pos">
+                Inspect Architecture &rarr;
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Client FAQ & GIF / Proof Guidance -->
+    <section class="proof-faq-section" id="proof-faq">
+      <div class="container">
+        <div class="proof-faq-card">
+          <div class="proof-faq-header">
+            <div class="faq-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </div>
+            <div>
+              <h2 class="proof-faq-title">Visual Proof: Animated GIFs &amp; Interaction Walkthroughs</h2>
+              <p class="proof-faq-subtitle">How prospective clients evaluate live software workflows.</p>
+            </div>
+          </div>
+
+          <div class="proof-qa-grid">
+            <div class="qa-block">
+              <h3 class="qa-question">Should you use animated GIFs in your portfolio?</h3>
+              <p class="qa-answer">
+                <strong>Yes, absolutely.</strong> A 6–10 second looping GIF showing mouse navigation, button clicks, and immediate UI feedback is the single most persuasive proof of competence. It shows prospective clients that your systems are real, functional, and intuitive to operate.
+              </p>
+            </div>
+
+            <div class="qa-block">
+              <h3 class="qa-question">Best practices for recording project GIFs</h3>
+              <p class="qa-answer">
+                Keep the camera steady—avoid aggressive zooming. Instead, capture a single clear user story: for example, <em>searching an academic record &rarr; clicking Generate QR Certificate &rarr; seeing the verified output</em>. Save as <code>.gif</code> or lightweight <code>.webp</code> under <code>assets/screenshots/</code>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Engineering Capabilities Section -->
+    <section class="capabilities-section" id="capabilities">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Architectural Standards</h2>
+          <p class="section-lead">
+            Every client build inherits the security, discipline, and fail-safe standards refined in government university operations.
+          </p>
+        </div>
+
+        <div class="capabilities-grid">
+          <div class="capability-item">
+            <div class="capability-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+              </svg>
+            </div>
+            <h3 class="capability-title">Document Routing &amp; Auditing</h3>
+            <p class="capability-text">
+              Multi-office routing engines, immutable event logging, QR verification codes, and automated PDF transmittals that prevent misplaced records.
+            </p>
+          </div>
+
+          <div class="capability-item">
+            <div class="capability-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h3 class="capability-title">Access Control &amp; Data Security</h3>
+            <p class="capability-text">
+              Fine-grained role-based access control (RBAC), multi-factor authentication, cryptographic audit logs, and data sanitization protecting sensitive records.
+            </p>
+          </div>
+
+          <div class="capability-item">
+            <div class="capability-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
+            </div>
+            <h3 class="capability-title">High-Integrity Databases</h3>
+            <p class="capability-text">
+              Relational schema architecture with ACID transactional integrity, connection pooling, and deadlock prevention under surge traffic.
+            </p>
+          </div>
+
+          <div class="capability-item">
+            <div class="capability-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3 class="capability-title">Modern Web &amp; API Architecture</h3>
+            <p class="capability-text">
+              Clean REST and WebSocket interfaces, decoupled backend services, performant responsive frontends, and seamless third-party payment integrations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services / Engagement Section -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Client Engagement Offerings</h2>
+          <p class="section-lead">
+            Direct collaboration from architectural design to deployment and post-launch maintenance.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-box">
+            <div class="service-tag">Core Offering</div>
+            <h3 class="service-heading">Custom Web Applications &amp; Portals</h3>
+            <p class="service-desc">
+              End-to-end bespoke web platforms tailored to your business workflows. Includes custom databases, client dashboards, user authentication, and third-party integrations.
+            </p>
+            <ul class="service-list">
+              <li>Custom relational databases &amp; API engines</li>
+              <li>Admin panels, dashboards &amp; reporting tools</li>
+              <li>Responsive mobile-first interfaces</li>
+              <li>Payment gateway integrations (Stripe, PayPal, PayMongo)</li>
+            </ul>
+          </div>
+
+          <div class="service-box">
+            <div class="service-tag">Operations &amp; Scale</div>
+            <h3 class="service-heading">Internal Automation &amp; Data Workflows</h3>
+            <p class="service-desc">
+              Eliminate repetitive manual data entry and spreadsheet gridlocks. We build automated syncing pipelines, PDF/invoice generators, and SMS/Email notification systems.
+            </p>
+            <ul class="service-list">
+              <li>Document routing &amp; tracking registries</li>
+              <li>Automated certificate &amp; QR verification generation</li>
+              <li>Third-party API synchronization</li>
+              <li>Operational alerts &amp; audit logging</li>
+            </ul>
+          </div>
+
+          <div class="service-box">
+            <div class="service-tag">Advisory &amp; Review</div>
+            <h3 class="service-heading">System Audits &amp; Architecture Modernization</h3>
+            <p class="service-desc">
+              Technical review of existing codebases for security vulnerabilities, concurrency bottlenecks, database indexing issues, and compliance gaps before public launch.
+            </p>
+            <ul class="service-list">
+              <li>Database query optimization &amp; schema audit</li>
+              <li>Security &amp; authentication vulnerability checks</li>
+              <li>Accessibility &amp; responsive UI/UX review</li>
+              <li>Clear remediation roadmap &amp; documentation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Background Section -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-card">
+          <div class="about-header">
+            <h2 class="about-title">Why Clients Choose This Dual Background</h2>
+          </div>
+          <div class="about-body">
+            <p>
+              Working in the <strong>Office of the College Secretary (OCS) at UPLB College of Forestry and Natural Resources</strong> means managing critical student records, graduation evaluations, and legal administrative transmittals where errors or downtime cannot happen.
+            </p>
+            <p>
+              When clients hire me for independent commercial work, they don't get flimsy prototypes that crash under modest traffic or leak user credentials. They get the rapid, modern UI polish of a boutique product shop backed by the architectural discipline of an institutional software engineer.
+            </p>
+            <div class="credentials-bar">
+              <div class="credential-item">
+                <span class="cred-title">UPLB CFNR OCS Engineer</span>
+                <span class="cred-detail">Enterprise &amp; registrar workflows</span>
+              </div>
+              <div class="credential-item">
+                <span class="cred-title">Full Lifecycle Delivery</span>
+                <span class="cred-detail">Discovery &rarr; Architecture &rarr; Code &rarr; Support</span>
+              </div>
+              <div class="credential-item">
+                <span class="cred-title">Direct Communication</span>
+                <span class="cred-detail">You speak directly to the engineer building it</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Consultation Section -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-layout">
+          <div class="contact-info">
+            <h2 class="section-title">Let's Discuss Your Project</h2>
+            <p class="contact-text">
+              Have an upcoming product, portal, or internal software tool? Reach out to outline your requirements, get a realistic architectural estimate, and discuss timeline availability.
+            </p>
+
+            <div class="quick-contact-methods">
+              <div class="contact-method-card">
+                <div class="method-label">Direct Email</div>
+                <div class="method-value-row">
+                  <span class="method-value" id="email-text">developer@uplb-cfnr.tech</span>
+                  <button type="button" class="btn-copy" id="copy-email-btn" title="Copy email address" aria-label="Copy email address">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    <span id="copy-feedback">Copy</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="contact-method-card">
+                <div class="method-label">Direct Connect</div>
+                <div class="method-links">
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="link-item">
+                    <span>LinkedIn Profile</span> &rarr;
+                  </a>
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="link-item">
+                    <span>GitHub Profile (Optional / Selected Public Repos)</span> &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Inquiry Form -->
+          <div class="contact-form-container">
+            <form class="inquiry-form" id="inquiry-form" novalidate>
+              <h3 class="form-title">Send a Project Brief</h3>
+
+              <div class="form-group">
+                <label for="client-name" class="form-label">Your Name or Organization</label>
+                <input type="text" id="client-name" name="name" class="form-input" placeholder="e.g. Maria Santos / Laguna Agribusiness" required>
+                <span class="form-error" id="name-error" hidden>Please provide your name or organization.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="client-email" class="form-label">Email Address</label>
+                <input type="email" id="client-email" name="email" class="form-input" placeholder="maria@example.com" required>
+                <span class="form-error" id="email-error" hidden>Please provide a valid email address.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="project-type" class="form-label">Project Scope</label>
+                <select id="project-type" name="projectType" class="form-select" required>
+                  <option value="" disabled selected>Select project category...</option>
+                  <option value="custom-app">Custom Web Application / SaaS</option>
+                  <option value="portal-internal">Portal or Internal Operations Tool</option>
+                  <option value="document-workflow">Document Tracking / Registry Workflow</option>
+                  <option value="audit-optimization">Codebase Audit &amp; Performance Tuning</option>
+                  <option value="other">Other Consulting</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="project-details" class="form-label">Project Overview &amp; Timeline</label>
+                <textarea id="project-details" name="details" class="form-textarea" rows="4" placeholder="Briefly describe the objective, target users, or key features needed..." required></textarea>
+                <span class="form-error" id="details-error" hidden>Please share a brief summary of the project.</span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
+                <span>Submit Inquiry</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+
+              <div class="form-status" id="form-status" hidden aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <span class="footer-brand">UPLB CFNR OCS &amp; Commercial Systems</span>
+        <span class="footer-copyright">&copy; 2026. Office of the College Secretary, UPLB CFNR, Laguna. All rights reserved.</span>
+      </div>
+      <div class="footer-right">
+        <a href="#top" class="back-to-top">
+          <span>Back to Top</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Architecture Modal / Drawer -->
+  <div class="modal-backdrop" id="project-modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-panel">
+      <div class="modal-header">
+        <div class="modal-track-badge" id="modal-track-badge"></div>
+        <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close project details">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <h2 class="modal-title" id="modal-title">Project Title</h2>
+        <p class="modal-tagline" id="modal-tagline"></p>
+
+        <div class="modal-spec-grid">
+          <div class="spec-block">
+            <span class="spec-label">Architecture Core</span>
+            <span class="spec-value" id="modal-stack"></span>
+          </div>
+          <div class="spec-block">
+            <span class="spec-label">Key Metric / Scale</span>
+            <span class="spec-value" id="modal-metric"></span>
+          </div>
+          <div class="spec-block">
+            <span class="spec-label">Deployment Scope</span>
+            <span class="spec-value" id="modal-scope"></span>
+          </div>
+        </div>
+
+        <div class="modal-section">
+          <h3 class="modal-subheading">Engineering Problem</h3>
+          <p class="modal-text" id="modal-problem"></p>
+        </div>
+
+        <div class="modal-section">
+          <h3 class="modal-subheading">Architectural Solution</h3>
+          <p class="modal-text" id="modal-solution"></p>
+        </div>
+
+        <div class="modal-section">
+          <h3 class="modal-subheading">Verified Outcome</h3>
+          <p class="modal-text" id="modal-outcome"></p>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a href="#contact" class="btn btn-primary btn-sm modal-contact-link" id="modal-inquire-link">Discuss Similar Project</a>
+        <button type="button" class="btn btn-secondary btn-sm" id="modal-dismiss-btn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
