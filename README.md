@@ -100,19 +100,6 @@ Navigate to `http://localhost:8000`.
 
 ---
 
-## 🚢 Deployment
-
-### GitHub Pages
-1. Go to repository **Settings** &rarr; **Pages**.
-2. Under **Build and deployment** &rarr; **Source**, select `Deploy from a branch`.
-3. Choose branch `main` and folder `/ (root)`.
-4. Click **Save**. The portfolio will be live at `https://<username>.github.io/<repo>/`.
-
-### Vercel / Netlify
-- Zero configuration required. Connect the Git repository and deploy using default static directory settings.
-
----
-
 ## 📜 License
 
 Content, case study specifications, and architecture descriptions are proprietary. Source code is licensed under the MIT License.
