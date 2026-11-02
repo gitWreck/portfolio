@@ -1,7 +1,7 @@
 /* ==========================================================================
    Design System: UPLB College of Forestry & Natural Resources Edition
    Forest Canopy Green & Molave Timber Bark
-   Dual Theme: Light Botanical Field (Default) & Dark Makiling Night
+   Dual Theme: Light Botanical Field (Default) & Dark Forest Night
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -24,7 +24,7 @@
   --text-muted: #577564;
   --text-inverse: #ffffff;
 
-  /* UPLB Forestry & Makiling Track */
+  /* UPLB Forestry Track */
   --forestry-base: #047857;
   --forestry-light: #059669;
   --forestry-glow: rgba(5, 150, 105, 0.12);
@@ -74,7 +74,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   Dark Mode ("Mt. Makiling Night")
+   Dark Mode ("Forest Night")
    -------------------------------------------------------------------------- */
 [data-theme="dark"] {
   --bg-root: #060e0a;
@@ -788,7 +788,7 @@ button, input, select, textarea {
 }
 
 .media-placeholder-hint {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -1464,6 +1464,11 @@ button, input, select, textarea {
   transition: opacity var(--transition-medium);
 }
 
+.modal-backdrop.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 html[data-theme="dark"] .modal-backdrop {
   background: rgba(4, 9, 6, 0.85);
 }
@@ -1472,7 +1477,7 @@ html[data-theme="dark"] .modal-backdrop {
   background: var(--bg-surface-1);
   border: 1px solid var(--border-medium);
   border-radius: var(--radius-lg);
-  max-width: 44rem;
+  max-width: 52rem;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
@@ -1575,6 +1580,168 @@ html[data-theme="dark"] .modal-panel {
   font-size: 0.9375rem;
   color: var(--text-secondary);
   line-height: 1.65;
+}
+
+/* Modal Screenshot Gallery */
+.modal-gallery-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.modal-gallery-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.modal-gallery-header .modal-subheading {
+  margin-bottom: 0;
+}
+
+.modal-gallery-counter {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-surface-1);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+}
+
+.modal-gallery-stage {
+  position: relative;
+  background: #07100b;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+}
+
+.modal-gallery-viewport {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-gallery-main-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  display: block;
+  transition: opacity 160ms ease;
+}
+
+.modal-gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(10, 25, 18, 0.75);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  z-index: 3;
+}
+
+.modal-gallery-nav:hover {
+  background: var(--forestry-base);
+  border-color: var(--forestry-base);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.modal-gallery-nav.prev {
+  left: 0.75rem;
+}
+
+.modal-gallery-nav.next {
+  right: 0.75rem;
+}
+
+.modal-gallery-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.15rem 0.25rem 0;
+}
+
+.modal-gallery-title {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.modal-gallery-expand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--forestry-base);
+  font-weight: 600;
+}
+
+.modal-gallery-expand-link:hover {
+  color: var(--forestry-light);
+  text-decoration: underline;
+}
+
+.modal-gallery-thumbs {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.35rem 0.15rem 0.25rem;
+  scrollbar-width: thin;
+}
+
+.modal-gallery-thumb {
+  flex-shrink: 0;
+  width: 80px;
+  height: 54px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 2px solid var(--border-subtle);
+  background: #000000;
+  cursor: pointer;
+  padding: 0;
+  transition: all var(--transition-fast);
+  opacity: 0.6;
+}
+
+.modal-gallery-thumb:hover {
+  opacity: 0.95;
+  border-color: var(--border-hover);
+}
+
+.modal-gallery-thumb.active {
+  opacity: 1;
+  border-color: var(--forestry-base);
+  box-shadow: 0 0 10px var(--forestry-glow);
+}
+
+.modal-gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .modal-footer {

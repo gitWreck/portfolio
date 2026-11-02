@@ -25,7 +25,7 @@ While dark mode is common in developer portfolios, light mode provides substanti
 - **Timber Bark Accent**: `#92400e` (Warm Mahogany)
 - **Commercial Accent**: `#0284c7` (Electric Ocean Blue)
 
-### Dark Mode ("Mt. Makiling Night")
+### Dark Mode ("Forest Night")
 - **Background Root**: `#060e0a`
 - **Surface Level 1**: `#0c1811`
 - **Surface Level 2**: `#12241a`

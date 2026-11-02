@@ -19,15 +19,15 @@ Position as an **"Institutional Administrative Systems Engineer & Commercial Pro
 
 ## 2. Theme & Aesthetic Concepts
 
-### Selected Theme: "Botanical Field Journal & Mt. Makiling Heritage" (Implemented)
+### Selected Theme: "Botanical Field Journal & Forestry Heritage" (Implemented)
 - **Primary / Default Mode**: Clean White / Light Mode (`#f7faf7` background, `#ffffff` card surfaces, deep pine-charcoal `#0a2014` text with >14:1 contrast).
-- **Secondary / Toggle Mode**: Dark Makiling Night (`#060e0a` background, `#0c1811` surfaces, `#f0fdf4` text).
+- **Secondary / Toggle Mode**: Dark Forest Night (`#060e0a` background, `#0c1811` surfaces, `#f0fdf4` text).
 - **Institutional Forest Accents**: Lush Canopy Emerald (`#047857` / `#10b981`), Molave Timber Bark & Amber (`#92400e` / `#b45309`).
 - **Commercial Accents**: Electric Ocean Blue / Cyan (`#0284c7` / `#06b6d4`).
 - **Delight & Interactivity**:
   - Interactive "Canopy Mode" floating leaf physics canvas.
   - One-click Sun/Moon theme switcher persisting to `localStorage`.
-  - Mt. Makiling Coordinates badge: `14.1378° N, 121.1989° E`.
+  - UPLB CFNR Coordinates badge: `14.1378° N, 121.1989° E`.
 
 ---
 
@@ -48,10 +48,10 @@ Position as an **"Institutional Administrative Systems Engineer & Commercial Pro
    ├── Brand Monogram (UPLB CFNR OCS & Commercial Systems)
    ├── Main Navigation (Selected Systems, Architecture, Services, Office Background)
    ├── Theme Toggle (Light / Dark)
-   └── Canopy Delight Mode (Floating Makiling Leaves Animation)
+   └── Canopy Delight Mode (Floating Forest Leaves Animation)
 
 2. Hero Section
-   ├── OCS Institutional & Mt. Makiling Heritage Pill
+   ├── OCS Institutional & UPLB CFNR Heritage Pill
    ├── Value proposition headline & description
    ├── Primary CTAs ("View Case Studies", "Start a Project Inquiry")
    └── Proof Metrics Strip (10,000+ Documents Tracked, 100% Curricular Audit Accuracy, 14+ Commercial Projects)
@@ -60,28 +60,24 @@ Position as an **"Institutional Administrative Systems Engineer & Commercial Pro
    ├── Track 1: UPLB CFNR OCS Systems (Document Tracker, Graduation Audit, Prerequisite Waivers)
    ├── Track 2: Commercial Client Projects (Supply Chain Ops, Booking SaaS, Restaurant POS)
    ├── Dynamic Project Preview Containers (GIF / Screenshot drop-in ready)
-   └── Deep-Dive Architectural Dossier Modals (Problem -> Solution -> Verified Outcome)
+   └── Deep-Dive Architectural Dossier Modals with Interactive Screenshot Gallery
 
-4. Client FAQ & Visual Proof Guidance
-   ├── Advice on animated GIFs vs. static screenshots
-   └── Why confidential institutional repositories are presented via case studies
-
-5. Architectural Standards Matrix
+4. Architectural Standards Matrix
    ├── Document Routing & Auditing
    ├── Access Control & Data Security
    ├── High-Integrity Databases (ACID, connection pooling)
    └── Modern Web & API Architecture
 
-6. Client Engagement Offerings
+5. Client Engagement Offerings
    ├── Custom Web Applications & Portals
    ├── Internal Automation & Data Workflows
    └── System Audits & Architecture Modernization
 
-7. Office Background & Heritage
+6. Office Background & Heritage
    ├── Narrative bridging UPLB OCS administrative discipline with commercial agility
    └── Credential indicators
 
-8. Contact & Project Inquiry
+7. Contact & Project Inquiry
    ├── Direct contact card (One-click email copy with toast feedback, LinkedIn, GitHub)
    └── Interactive project inquiry form with client-side validation
 ```
@@ -113,7 +109,7 @@ graph TD
 - [ ] Drop remaining screenshots for OCS systems into `assets/screenshots/`.
 
 ### Phase 2: Design System & Visual Specification
-- [x] Define color palette tokens (Light Botanical Field default + Dark Makiling Night).
+- [x] Define color palette tokens (Light Botanical Field default + Dark Forest Night).
 - [x] Set up UPLB Forestry Emerald (`#047857`) and Molave Timber Bark (`#92400e`).
 - [x] Define typography pairings (`Outfit` for headings, `Inter` for body, `JetBrains Mono` for tech tags).
 - [x] Codify craft floor rules in `DESIGN.md` (no kickers, no text gradients, themed browser surfaces).

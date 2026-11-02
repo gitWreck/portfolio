@@ -9,7 +9,7 @@
   <!-- Open Graph / Link Previews for WhatsApp, LinkedIn, Slack -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Systems Developer | UPLB CFNR Office of the College Secretary">
-  <meta property="og:description" content="Mission-critical academic administrative systems &amp; commercial web applications. Built at the foot of Mt. Makiling.">
+  <meta property="og:description" content="Mission-critical academic administrative systems &amp; commercial web applications. Built at UPLB College of Forestry &amp; Natural Resources.">
   <meta property="og:site_name" content="UPLB CFNR OCS Developer Portfolio">
 
   <!-- Typography -->
@@ -18,6 +18,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        if (theme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
 
@@ -39,7 +51,6 @@
         </span>
         <div class="brand-text-group">
           <span class="brand-text">UPLB CFNR OCS &amp; Commercial Systems</span>
-          <span class="brand-subtext">Office of the College Secretary · Mt. Makiling</span>
         </div>
       </a>
 
@@ -71,7 +82,7 @@
         </button>
 
         <!-- Fun Canopy Delight Toggle -->
-        <button type="button" class="btn-canopy-toggle" id="canopy-toggle-btn" title="Toggle Makiling Canopy Atmosphere" aria-label="Toggle Forest Canopy Leaves Animation">
+        <button type="button" class="btn-canopy-toggle" id="canopy-toggle-btn" title="Toggle Forest Canopy Atmosphere" aria-label="Toggle Forest Canopy Leaves Animation">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
             <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
@@ -83,7 +94,7 @@
       </div>
 
       <button type="button" class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <line x1="3" y1="12" x2="21" y2="12"></line>
           <line x1="3" y1="6" x2="21" y2="6"></line>
           <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -114,7 +125,7 @@
             <span class="pill-dot forestry" aria-hidden="true"></span>
             <span>Office of the College Secretary (OCS) · UPLB CFNR</span>
             <span class="pill-divider" aria-hidden="true">·</span>
-            <span class="coords-badge">Mt. Makiling · 14.1378° N</span>
+            <span class="coords-badge">UPLB CFNR · 14.1378° N</span>
           </div>
 
           <h1 class="hero-headline">
@@ -468,41 +479,6 @@
       </div>
     </section>
 
-    <!-- Client FAQ & GIF / Proof Guidance -->
-    <section class="proof-faq-section" id="proof-faq">
-      <div class="container">
-        <div class="proof-faq-card">
-          <div class="proof-faq-header">
-            <div class="faq-icon-box">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polygon points="5 3 19 12 5 21 5 3"></polygon>
-              </svg>
-            </div>
-            <div>
-              <h2 class="proof-faq-title">Visual Proof: Animated GIFs &amp; Interaction Walkthroughs</h2>
-              <p class="proof-faq-subtitle">How prospective clients evaluate live software workflows.</p>
-            </div>
-          </div>
-
-          <div class="proof-qa-grid">
-            <div class="qa-block">
-              <h3 class="qa-question">Should you use animated GIFs in your portfolio?</h3>
-              <p class="qa-answer">
-                <strong>Yes, absolutely.</strong> A 6–10 second looping GIF showing mouse navigation, button clicks, and immediate UI feedback is the single most persuasive proof of competence. It shows prospective clients that your systems are real, functional, and intuitive to operate.
-              </p>
-            </div>
-
-            <div class="qa-block">
-              <h3 class="qa-question">Best practices for recording project GIFs</h3>
-              <p class="qa-answer">
-                Keep the camera steady—avoid aggressive zooming. Instead, capture a single clear user story: for example, <em>searching an academic record &rarr; clicking Generate QR Certificate &rarr; seeing the verified output</em>. Save as <code>.gif</code> or lightweight <code>.webp</code> under <code>assets/screenshots/</code>.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Engineering Capabilities Section -->
     <section class="capabilities-section" id="capabilities">
       <div class="container">
@@ -723,6 +699,7 @@
                   <option value="audit-optimization">Codebase Audit &amp; Performance Tuning</option>
                   <option value="other">Other Consulting</option>
                 </select>
+                <span class="form-error" id="type-error" hidden>Please select a project category.</span>
               </div>
 
               <div class="form-group">
@@ -787,6 +764,36 @@
             <span class="spec-label">Deployment Scope</span>
             <span class="spec-value" id="modal-scope"></span>
           </div>
+        </div>
+
+        <!-- Interactive System Screenshot Gallery -->
+        <div class="modal-section modal-gallery-section" id="modal-gallery-section" hidden>
+          <div class="modal-gallery-header">
+            <h3 class="modal-subheading">System Interface Captures</h3>
+            <span class="modal-gallery-counter" id="modal-gallery-counter">1 / 1</span>
+          </div>
+
+          <div class="modal-gallery-stage">
+            <button type="button" class="modal-gallery-nav prev" id="modal-gallery-prev" aria-label="Previous screenshot">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <div class="modal-gallery-viewport">
+              <img src="" alt="System interface preview" id="modal-gallery-main-img" class="modal-gallery-main-img">
+            </div>
+            <button type="button" class="modal-gallery-nav next" id="modal-gallery-next" aria-label="Next screenshot">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+
+          <div class="modal-gallery-info">
+            <span class="modal-gallery-title" id="modal-gallery-title">Screen Title</span>
+            <a href="" target="_blank" rel="noopener noreferrer" class="modal-gallery-expand-link" id="modal-gallery-expand" title="Open high-resolution view in new tab">
+              <span>Full Resolution</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </div>
+
+          <div class="modal-gallery-thumbs" id="modal-gallery-thumbs" role="tablist" aria-label="Screenshot thumbnails"></div>
         </div>
 
         <div class="modal-section">

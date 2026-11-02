@@ -64,7 +64,57 @@ const PROJECT_DETAILS = {
     scope: 'Production Monorepo (Atlas Transport Corporation)',
     problem: 'Coordinating complex inter-island roll-on/roll-off (RORO) sea shipping and overland wingvan trucking across dispersed regional hubs led to manifest reconciliation lags, manual paper gate passes, and lack of real-time milestone tracking for cargo clients.',
     solution: 'Architected an npm/Turborepo monorepo with 4 dedicated web consoles (Admin, Manager, Checker, Public Tracking) and an Expo 53 mobile field app with hardware barcode/QR scanning. Implemented cryptographic SHA-256 seal locking for wingvans, automated thermal shipping manifests, and Firestore real-time state synchronization.',
-    outcome: 'Eliminated package loss across inter-island sea transits. Streamlined warehouse barcode intake and delivered 100% verifiable digital proof-of-delivery (e-POD) for commercial enterprise shipments.'
+    outcome: 'Eliminated package loss across inter-island sea transits. Streamlined warehouse barcode intake and delivered 100% verifiable digital proof-of-delivery (e-POD) for commercial enterprise shipments.',
+    screenshots: [
+      {
+        title: 'Admin Console & Fleet Health Overview',
+        url: 'assets/screenshots/atlas/screenshots/08_admin_dashboard.png'
+      },
+      {
+        title: 'Public Real-Time Milestone Tracking (/track/[id])',
+        url: 'assets/screenshots/atlas/screenshots/06_tracking_sample.png'
+      },
+      {
+        title: 'Inter-Island Hub Delivery Schedule Matrix',
+        url: 'assets/screenshots/atlas/screenshots/01_home_delivery_schedule.png'
+      },
+      {
+        title: 'Multi-Hub Regional Warehouse Coverage',
+        url: 'assets/screenshots/atlas/screenshots/01_home_warehouse_coverage.png'
+      },
+      {
+        title: 'Integrated Client & Operations Support Portal',
+        url: 'assets/screenshots/atlas/screenshots/01_home_atlas_support.png'
+      },
+      {
+        title: 'Role-Based Authentication & Guarded Consoles',
+        url: 'assets/screenshots/atlas/screenshots/02_login.png'
+      },
+      {
+        title: 'Real-Time Dispatch Messaging & Incident Log',
+        url: 'assets/screenshots/atlas/screenshots/03_dashboard_messages.png'
+      },
+      {
+        title: 'Official Shipping Manifest with QR Security Seal',
+        url: 'assets/screenshots/atlas/screenshots/12_print_manifest.png'
+      },
+      {
+        title: 'Delivery Reconciliation & Discrepancy Audit Manifest',
+        url: 'assets/screenshots/atlas/screenshots/13_print_delivery_manifest.png'
+      },
+      {
+        title: 'Mobile Driver App: Route Checkpoints & e-POD Dispatch',
+        url: 'assets/screenshots/atlas/screenshots/mobile/02_driver_dashboard.png'
+      },
+      {
+        title: 'Mobile Warehouse App: High-Speed Barcode & QR Scanner',
+        url: 'assets/screenshots/atlas/screenshots/mobile/03_checker_dashboard.png'
+      },
+      {
+        title: 'Mobile Customer App: Direct Driver & Operations Chat',
+        url: 'assets/screenshots/atlas/screenshots/mobile/14_customer_chat_conversation.png'
+      }
+    ]
   },
   'saas-scheduler': {
     title: 'High-Converting Client Booking & Intake Platform',
@@ -84,7 +134,7 @@ const PROJECT_DETAILS = {
     track: 'commercial',
     trackLabel: 'Commercial Client Product',
     stack: 'Vanilla JS, IndexedDB, WebSocket Hub, Thermal ESC/POS',
-    metric: '&lt;150ms order delivery, 100% offline resilient',
+    metric: '<150ms order delivery, 100% offline resilient',
     scope: 'Multi-branch Commercial Deployment',
     problem: 'Frequent restaurant internet interruptions caused lost tickets and frustrated staff using cloud-only point-of-sale systems.',
     solution: 'Engineered an offline-first PWA using IndexedDB for local order persistence and optimistic UI updates. When connection drops, orders queue locally and sync automatically upon reconnection.',
@@ -125,7 +175,7 @@ function initProjectFilters() {
 }
 
 /* --------------------------------------------------------------------------
- * Project Detail Modal
+ * Project Detail Modal with Interactive Screenshot Gallery
  * -------------------------------------------------------------------------- */
 function initProjectModals() {
   const modal = document.getElementById('project-modal');
@@ -133,9 +183,105 @@ function initProjectModals() {
   const dismissBtn = document.getElementById('modal-dismiss-btn');
   const openButtons = document.querySelectorAll('.open-modal-btn');
 
-  function openModal(projectId) {
+  // Gallery DOM Elements
+  const gallerySection = document.getElementById('modal-gallery-section');
+  const galleryCounter = document.getElementById('modal-gallery-counter');
+  const galleryMainImg = document.getElementById('modal-gallery-main-img');
+  const galleryTitle = document.getElementById('modal-gallery-title');
+  const galleryExpand = document.getElementById('modal-gallery-expand');
+  const galleryThumbs = document.getElementById('modal-gallery-thumbs');
+  const galleryPrev = document.getElementById('modal-gallery-prev');
+  const galleryNext = document.getElementById('modal-gallery-next');
+
+  let lastFocusedElement = null;
+  let activeScreenshots = [];
+  let currentGalleryIndex = 0;
+
+  function setGalleryIndex(index) {
+    if (!activeScreenshots.length) return;
+    if (index < 0) index = activeScreenshots.length - 1;
+    if (index >= activeScreenshots.length) index = 0;
+    currentGalleryIndex = index;
+
+    const item = activeScreenshots[currentGalleryIndex];
+    if (galleryCounter) {
+      galleryCounter.textContent = `${currentGalleryIndex + 1} / ${activeScreenshots.length}`;
+    }
+    if (galleryTitle) {
+      galleryTitle.textContent = item.title || `Capture ${currentGalleryIndex + 1}`;
+    }
+    if (galleryMainImg) {
+      galleryMainImg.src = item.url;
+      galleryMainImg.alt = item.title || 'System interface capture';
+    }
+    if (galleryExpand) {
+      galleryExpand.href = item.url;
+    }
+
+    if (galleryThumbs) {
+      const thumbBtns = galleryThumbs.querySelectorAll('.modal-gallery-thumb');
+      thumbBtns.forEach((tb, i) => {
+        if (i === currentGalleryIndex) {
+          tb.classList.add('active');
+          tb.setAttribute('aria-selected', 'true');
+          tb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+        } else {
+          tb.classList.remove('active');
+          tb.setAttribute('aria-selected', 'false');
+        }
+      });
+    }
+  }
+
+  function setupGallery(screenshots) {
+    if (!gallerySection) return;
+    if (!screenshots || screenshots.length === 0) {
+      gallerySection.hidden = true;
+      activeScreenshots = [];
+      return;
+    }
+
+    activeScreenshots = screenshots;
+    gallerySection.hidden = false;
+
+    if (galleryThumbs) {
+      galleryThumbs.innerHTML = '';
+      activeScreenshots.forEach((item, index) => {
+        const thumbBtn = document.createElement('button');
+        thumbBtn.type = 'button';
+        thumbBtn.className = 'modal-gallery-thumb';
+        thumbBtn.setAttribute('role', 'tab');
+        thumbBtn.setAttribute('aria-label', item.title || `Screenshot ${index + 1}`);
+        thumbBtn.setAttribute('aria-selected', 'false');
+
+        const thumbImg = document.createElement('img');
+        thumbImg.src = item.url;
+        thumbImg.alt = item.title || `Thumbnail ${index + 1}`;
+        thumbBtn.appendChild(thumbImg);
+
+        thumbBtn.addEventListener('click', () => {
+          setGalleryIndex(index);
+        });
+
+        galleryThumbs.appendChild(thumbBtn);
+      });
+    }
+
+    setGalleryIndex(0);
+  }
+
+  if (galleryPrev) {
+    galleryPrev.addEventListener('click', () => setGalleryIndex(currentGalleryIndex - 1));
+  }
+  if (galleryNext) {
+    galleryNext.addEventListener('click', () => setGalleryIndex(currentGalleryIndex + 1));
+  }
+
+  function openModal(projectId, triggerEl) {
     const data = PROJECT_DETAILS[projectId];
     if (!data) return;
+
+    lastFocusedElement = triggerEl || document.activeElement;
 
     // Populate data
     const badgeEl = document.getElementById('modal-track-badge');
@@ -151,6 +297,9 @@ function initProjectModals() {
     document.getElementById('modal-solution').textContent = data.solution;
     document.getElementById('modal-outcome').textContent = data.outcome;
 
+    // Initialize screenshot gallery
+    setupGallery(data.screenshots || []);
+
     // Show modal
     modal.hidden = false;
     modal.classList.add('is-active');
@@ -161,42 +310,81 @@ function initProjectModals() {
     closeBtn.focus();
   }
 
-  function closeModal() {
+  function closeModal(immediateUnlock = false) {
     modal.classList.remove('is-active');
     modal.setAttribute('aria-hidden', 'true');
-    setTimeout(() => {
-      modal.hidden = true;
+    if (immediateUnlock) {
       document.body.style.overflow = '';
-    }, 200);
+      modal.hidden = true;
+      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+        lastFocusedElement.focus();
+      }
+    } else {
+      setTimeout(() => {
+        modal.hidden = true;
+        document.body.style.overflow = '';
+        if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+          lastFocusedElement.focus();
+        }
+      }, 200);
+    }
   }
 
   openButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       const projectId = btn.getAttribute('data-project');
-      openModal(projectId);
+      openModal(projectId, btn);
     });
   });
 
-  closeBtn.addEventListener('click', closeModal);
-  dismissBtn.addEventListener('click', closeModal);
+  closeBtn.addEventListener('click', () => closeModal(false));
+  dismissBtn.addEventListener('click', () => closeModal(false));
 
   // Close when clicking outside panel
   modal.addEventListener('click', (e) => {
     if (e.target === modal) {
-      closeModal();
+      closeModal(false);
+    }
+  });
+
+  // Focus trap & arrow key navigation inside open modal
+  modal.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab') {
+      const focusable = modal.querySelectorAll('button:not([disabled]), [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+      if (focusable.length === 0) return;
+      const firstEl = focusable[0];
+      const lastEl = focusable[focusable.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstEl) {
+          lastEl.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastEl) {
+          firstEl.focus();
+          e.preventDefault();
+        }
+      }
+    } else if (e.key === 'ArrowLeft' && activeScreenshots.length > 1) {
+      setGalleryIndex(currentGalleryIndex - 1);
+      e.preventDefault();
+    } else if (e.key === 'ArrowRight' && activeScreenshots.length > 1) {
+      setGalleryIndex(currentGalleryIndex + 1);
+      e.preventDefault();
     }
   });
 
   // Close on Escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !modal.hidden) {
-      closeModal();
+      closeModal(false);
     }
   });
 
   const inquireLink = document.getElementById('modal-inquire-link');
   if (inquireLink) {
-    inquireLink.addEventListener('click', closeModal);
+    inquireLink.addEventListener('click', () => closeModal(true));
   }
 }
 
@@ -212,18 +400,36 @@ function initEmailCopy() {
 
   copyBtn.addEventListener('click', async () => {
     const email = emailText.textContent.trim();
-    try {
-      await navigator.clipboard.writeText(email);
-      copyFeedback.textContent = 'Copied!';
-      setTimeout(() => {
-        copyFeedback.textContent = 'Copy';
-      }, 2000);
-    } catch (err) {
-      copyFeedback.textContent = 'Copied!';
-      setTimeout(() => {
-        copyFeedback.textContent = 'Copy';
-      }, 2000);
+    let copied = false;
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      try {
+        await navigator.clipboard.writeText(email);
+        copied = true;
+      } catch (err) {
+        copied = false;
+      }
     }
+
+    if (!copied) {
+      try {
+        const textarea = document.createElement('textarea');
+        textarea.value = email;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        copied = document.execCommand('copy');
+        document.body.removeChild(textarea);
+      } catch (e) {
+        copied = false;
+      }
+    }
+
+    copyFeedback.textContent = copied ? 'Copied!' : 'Failed';
+    setTimeout(() => {
+      copyFeedback.textContent = 'Copy';
+    }, 2000);
   });
 }
 
@@ -239,40 +445,51 @@ function initContactForm() {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
+    if (statusEl) statusEl.hidden = true;
 
     const nameInput = document.getElementById('client-name');
     const emailInput = document.getElementById('client-email');
+    const typeSelect = document.getElementById('project-type');
     const detailsInput = document.getElementById('project-details');
 
     const nameError = document.getElementById('name-error');
     const emailError = document.getElementById('email-error');
+    const typeError = document.getElementById('type-error');
     const detailsError = document.getElementById('details-error');
 
     let isValid = true;
 
     // Validate Name
     if (!nameInput.value.trim()) {
-      nameError.hidden = false;
+      if (nameError) nameError.hidden = false;
       isValid = false;
     } else {
-      nameError.hidden = true;
+      if (nameError) nameError.hidden = true;
     }
 
     // Validate Email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailInput.value.trim() || !emailRegex.test(emailInput.value.trim())) {
-      emailError.hidden = false;
+      if (emailError) emailError.hidden = false;
       isValid = false;
     } else {
-      emailError.hidden = true;
+      if (emailError) emailError.hidden = true;
+    }
+
+    // Validate Project Scope
+    if (!typeSelect.value) {
+      if (typeError) typeError.hidden = false;
+      isValid = false;
+    } else {
+      if (typeError) typeError.hidden = true;
     }
 
     // Validate Details
     if (!detailsInput.value.trim()) {
-      detailsError.hidden = false;
+      if (detailsError) detailsError.hidden = false;
       isValid = false;
     } else {
-      detailsError.hidden = true;
+      if (detailsError) detailsError.hidden = true;
     }
 
     if (!isValid) return;
@@ -289,9 +506,11 @@ function initContactForm() {
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
       `;
 
-      statusEl.hidden = false;
-      statusEl.className = 'form-status success';
-      statusEl.textContent = 'Salamat! Your project brief has been received. I will review the architecture scope and reply within 24 hours.';
+      if (statusEl) {
+        statusEl.hidden = false;
+        statusEl.className = 'form-status success';
+        statusEl.textContent = 'Salamat! Your project brief has been received. I will review the architecture scope and reply within 24 hours.';
+      }
     }, 800);
   });
 }
@@ -321,7 +540,7 @@ function initMobileNav() {
 }
 
 /* --------------------------------------------------------------------------
- * Fun Canopy Mode: Floating Mt. Makiling Foliage Canvas
+ * Fun Canopy Mode: Floating Forest Foliage Canvas
  * -------------------------------------------------------------------------- */
 function initCanopyDelightMode() {
   const toggleBtn = document.getElementById('canopy-toggle-btn');
@@ -446,11 +665,19 @@ function initThemeSwitcher() {
   const moonIcon = document.querySelector('.moon-icon');
   const btnText = document.getElementById('theme-btn-text');
 
-  // Default to 'light' (White mode)
-  const savedTheme = localStorage.getItem('theme') || 'light';
-  applyTheme(savedTheme);
+  let savedTheme = null;
+  try {
+    savedTheme = localStorage.getItem('theme');
+  } catch (e) {}
 
-  function applyTheme(theme) {
+  if (!savedTheme) {
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    savedTheme = prefersDark ? 'dark' : 'light';
+  }
+
+  applyTheme(savedTheme, false);
+
+  function applyTheme(theme, save = true) {
     if (theme === 'dark') {
       document.documentElement.setAttribute('data-theme', 'dark');
       if (sunIcon) sunIcon.hidden = true;
@@ -462,7 +689,12 @@ function initThemeSwitcher() {
       if (moonIcon) moonIcon.hidden = true;
       if (btnText) btnText.textContent = 'Light';
     }
-    localStorage.setItem('theme', theme);
+
+    if (save) {
+      try {
+        localStorage.setItem('theme', theme);
+      } catch (e) {}
+    }
   }
 
   if (!toggleBtn) return;
@@ -470,7 +702,7 @@ function initThemeSwitcher() {
   toggleBtn.addEventListener('click', () => {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     const nextTheme = isDark ? 'light' : 'dark';
-    applyTheme(nextTheme);
+    applyTheme(nextTheme, true);
   });
 }
 
