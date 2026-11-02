@@ -116,3 +116,4 @@ Navigate to `http://localhost:8000`.
 ## 📜 License
 
 Content, case study specifications, and architecture descriptions are proprietary. Source code is licensed under the MIT License.
+
