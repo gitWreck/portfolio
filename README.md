@@ -1,4 +1,4 @@
-# Systems Developer Portfolio: UPLB CFNR OCS & Commercial Web Engineering
+# Andre Jose Esplana — Web Developer & Programmer Portfolio
 
 A high-performance, accessible developer portfolio showcasing institutional state university administrative software alongside commercial client web applications. Grounded in registrar-level data integrity developed for the **Office of the College Secretary (OCS)** at the **University of the Philippines Los Baños (UPLB) College of Forestry and Natural Resources (CFNR)**, balanced with modern commercial product engineering.
 
@@ -38,13 +38,21 @@ This portfolio is architected around two complementary engineering strengths:
 
 ---
 
+---
+
+## 🛠️ Core Technology Stack & Skills
+
+- **Backend & Database Systems**: **PHP** (PDO), **MySQL** / MariaDB, **Node.js**, **Supabase**, **Java**, **Google Apps Script**, REST APIs & WebSockets.
+- **Frontend & Web Development**: **JavaScript** (ES6+), **React**, **Next.js**, **HTML5**, **CSS3**, Responsive UI Architecture.
+- **Mobile & Hardware Integration**: **React Native**, **Android** (Java / Expo), Touchscreen Student Kiosks, Offline-First PWAs.
+- **Visual Design & Media**: **Canva**, **Adobe Photoshop**, **Adobe Illustrator**, Publication Materials & Typography.
+
 ## 📂 Highlighted Systems
 
 | Track | System | Architecture Stack | Verified Scale / Metric |
 | :--- | :--- | :--- | :--- |
-| **UPLB OCS** | **Academic Document Tracking & Verification Platform** | PHP, MySQL, QR Barcodes, Role-Based Access, PDFKit | 10,000+ Requests Routed, 0 Misplaced Files |
-| **UPLB OCS** | **Student Curricular Evaluation & Clearance Engine** | PHP, MariaDB, Curricular Rules Engine, FPDF | 100% Curricular Audit Accuracy, 600+ Graduating Seniors |
-| **UPLB OCS** | **Course Prerequisite Waiver & Enrollment Endorsement Core** | PHP/Laravel, MySQL, Digital Approvals, SMS/Email Dispatch | 48hr Turnaround (down from 2 weeks), 1,400+ Petitions |
+| **UPLB OCS** | **DTOCS-CFNR: Document Tracker & Kiosk Management System** | PHP 5.5+/8.x, MySQL/MariaDB, Node.js WebSockets, DataTables, Chart.js 4.4 | Real-Time Queue Sync, CSAR Live Integration, 9 Screenshots |
+| **UPLB OCS** | **Essentials Hub: Student Welfare Pantry & Resource Management Platform** | PHP (PDO), MySQL, Touchscreen Kiosk, Daily Quota Bounds, Chart.js | Daily Quota Enforcement, 100% Audit Integrity, 6 Screenshots |
 | **Commercial** | **Atlas Trucking & Multi-Hub Freight Operations Platform** | Next.js 16 (App Router), Expo 53, Firebase Firestore, Turborepo | 1,222 Commits, Multi-Island Logistics Hubs, SHA-256 Seals |
 | **Commercial** | **High-Converting Client Booking & Intake Platform** | TypeScript, Tailwind/CSS Tokens, Supabase, Twilio | 4.2x Intake Completion Rate, <5% No-Show Rate |
 | **Commercial** | **Cloud POS & Real-Time Kitchen Display System** | Vanilla JS, IndexedDB, WebSocket Hub, Thermal ESC/POS | <150ms Ticket Latency, 100% Offline Resilient PWA |
@@ -55,48 +63,31 @@ This portfolio is architected around two complementary engineering strengths:
 
 ```text
 portfolio/
-├── index.html                      # Semantic single-page application structure & modals
-├── style.css                       # Complete tokenized CSS design system & responsive layout
-├── script.js                       # Vanilla JS application controllers (modal, filters, canopy, form)
-├── DESIGN.md                       # Design system rules, token specifications & craft floor
-├── DOCS.md                         # Product roadmap, information architecture & implementation plan
-├── PRODUCT.md                      # Strategic positioning & project identity specifications
-├── README.md                       # Project documentation & overview
+├── index.html                      # Semantic single-page layout & accessibility structure
+├── style.css                       # Master CSS import orchestrator
+├── script.js                       # Main application lifecycle orchestrator
+├── css/                            # Modular Design System Stylesheets
+│   ├── tokens.css                  # Design tokens, UPLB CFNR colors & dark theme variables
+│   ├── base.css                    # Modern CSS reset, container layouts, buttons & footer
+│   ├── header.css                  # Sticky glassmorphic navigation & mobile drawer
+│   ├── hero.css                    # Hero typography, badge pills & proof metrics strip
+│   ├── projects.css                # Work section, perspective filters & mock browser cards
+│   ├── graphics.css                # Visual design grid, pubmat cards & hover overlays
+│   ├── sections.css                # Capabilities, services, heritage & client FAQ
+│   ├── contact.css                 # Project brief inquiry form & one-click email card
+│   └── modals.css                  # Project dossier modal, screenshot carousel & lightbox
+├── js/                             # Modular JavaScript Controllers
+│   ├── projects-data.js            # Architectural project database & metadata registry
+│   ├── projects.js                 # Dynamic project card renderer & filter synchronizer
+│   ├── graphics-data.js            # Facebook publication materials catalog & verified dates
+│   ├── graphics.js                 # Pubmat grid renderer, year filter & image lightbox
+│   ├── modal.js                    # Dossier dialog, interactive gallery carousel & focus trap
+│   ├── canopy.js                   # Interactive foliage particle canvas physics
+│   └── contact.js                  # One-click email copy & inquiry brief validation
 └── assets/
-    └── screenshots/
-        ├── README.md               # Screenshot drop-in guide & recording recommendations
-        └── atlas/
-            ├── README.md           # Atlas Transport Corporation platform documentation
-            └── screenshots/        # High-resolution web & mobile platform captures
-                ├── 08_admin_dashboard.png
-                ├── 06_tracking_sample.png
-                ├── 12_print_manifest.png
-                └── mobile/
-                    ├── 02_driver_dashboard.png
-                    └── 03_checker_dashboard.png
+    ├── graphics/                   # High-res publication materials & infographic designs
+    └── screenshots/                # Real-world system screenshots (DTOCS, Essentials Hub, Atlas)
 ```
-
----
-
-## 🛠️ Local Development
-
-Because this project uses vanilla web standards with no build tools or package dependencies required for runtime, running it locally requires only a standard static web server or browser.
-
-### Option A: VS Code Live Server
-1. Open the repository in Visual Studio Code.
-2. Click **Go Live** on the bottom status bar or right-click `index.html` &rarr; **Open with Live Server**.
-
-### Option B: Node.js `npx serve`
-```bash
-npx serve .
-```
-Navigate to `http://localhost:3000`.
-
-### Option C: Python 3
-```bash
-python -m http.server 8000
-```
-Navigate to `http://localhost:8000`.
 
 ---
 

@@ -1,0 +1,279 @@
+/* ==========================================================================
+   Visual Communications & Graphic Design Showcase Section
+   ========================================================================== */
+.graphics-section {
+  padding: 5.5rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+  background-color: var(--bg-surface-2);
+}
+
+.graphic-filter-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 2.25rem;
+  justify-content: flex-start;
+}
+
+.graphic-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface-1);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.graphic-filter-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+  background: var(--bg-surface-2);
+}
+
+.graphic-filter-btn.active {
+  color: #ffffff;
+  background: var(--forestry-base);
+  border-color: var(--forestry-base);
+  box-shadow: 0 2px 8px var(--forestry-glow);
+}
+
+.graphic-filter-btn .filter-count {
+  font-size: 0.75rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: var(--radius-full);
+  background: var(--bg-surface-2);
+  color: var(--text-muted);
+}
+
+.graphic-filter-btn.active .filter-count {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.graphics-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+@media (min-width: 680px) {
+  .graphics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1040px) {
+  .graphics-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.graphic-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.graphic-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--forestry-border);
+  box-shadow: var(--shadow-md), 0 0 20px var(--forestry-glow);
+}
+
+.graphic-preview-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  background: #000000;
+}
+
+.graphic-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.graphic-card:hover .graphic-img {
+  transform: scale(1.03);
+}
+
+.graphic-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 30, 24, 0.55);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.graphic-card:hover .graphic-overlay,
+.graphic-card:focus-within .graphic-overlay {
+  opacity: 1;
+}
+
+.btn-zoom-graphic {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--forest-900);
+  border: none;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(0.95);
+  transition: all var(--transition-fast);
+}
+
+.btn-zoom-graphic:hover {
+  transform: scale(1.02);
+  background: #ffffff;
+}
+
+.graphic-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1.25rem 1.4rem;
+}
+
+.graphic-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.graphic-date-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.graphic-category-pill {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  background: var(--forestry-bg);
+  color: var(--forestry-base);
+  border: 1px solid var(--forestry-border);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.graphic-title {
+  font-family: var(--font-heading);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
+  margin-bottom: 0.45rem;
+}
+
+.graphic-caption {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 1.1rem;
+}
+
+.graphic-card-footer {
+  margin-top: auto;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-fb-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #1877f2;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.btn-fb-link:hover {
+  text-decoration: underline;
+  color: #166fe5;
+}
+
+.btn-text-open-zoom {
+  background: none;
+  border: none;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--forestry-base);
+  cursor: pointer;
+  padding: 0;
+  transition: color var(--transition-fast);
+}
+
+.btn-text-open-zoom:hover {
+  color: var(--forestry-dark);
+  text-decoration: underline;
+}
+.section-tools-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.15rem;
+}
+
+.section-tools-strip .tool-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.775rem;
+  padding: 0.3rem 0.75rem;
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-full);
+  color: var(--text-primary);
+  font-weight: 500;
+  transition: border-color var(--transition-fast);
+}
+
+.section-tools-strip .tool-tag:hover {
+  border-color: var(--forestry-base);
+}

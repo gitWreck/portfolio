@@ -57,7 +57,7 @@ Position as an **"Institutional Administrative Systems Engineer & Commercial Pro
    └── Proof Metrics Strip (10,000+ Documents Tracked, 100% Curricular Audit Accuracy, 14+ Commercial Projects)
 
 3. Interactive Work Showcase (Bifurcated View)
-   ├── Track 1: UPLB CFNR OCS Systems (Document Tracker, Graduation Audit, Prerequisite Waivers)
+   ├── Track 1: UPLB CFNR OCS Systems (DTOCS Document Tracker & Kiosk, Essentials Hub Welfare Pantry)
    ├── Track 2: Commercial Client Projects (Supply Chain Ops, Booking SaaS, Restaurant POS)
    ├── Dynamic Project Preview Containers (GIF / Screenshot drop-in ready)
    └── Deep-Dive Architectural Dossier Modals with Interactive Screenshot Gallery
@@ -98,15 +98,15 @@ graph TD
 
 ### Phase 1: Content & Asset Curation
 - [x] Select 3 flagship university systems from the Office of the College Secretary:
-  - *OCS Academic Document Tracking & Verification Platform* (`ocs-document-tracker`)
-  - *Student Curricular Evaluation & Clearance Engine* (`graduation-audit`)
-  - *Course Prerequisite Waiver & Enrollment Endorsement Core* (`prerequisite-waiver`)
+  - *DTOCS-CFNR: Document Tracker & Kiosk Management System* (`dtocs-cfnr`)
+  - *Essentials Hub: Student Welfare Pantry & Resource Management Platform* (`dtocs-essential-hub`)
 - [x] Select 3 commercial/client projects with outcomes:
   - *Atlas Trucking & Multi-Hub Freight Operations Platform* (`atlas-trucking` — 1,222 commits, Next.js 16 monorepo)
   - *High-Converting Client Booking & Intake Platform* (`saas-scheduler`)
   - *Cloud POS & Real-Time Kitchen Display System* (`retail-pos`)
 - [x] Integrate real Atlas Trucking platform screenshots (`assets/screenshots/atlas/screenshots/08_admin_dashboard.png`).
-- [ ] Drop remaining screenshots for OCS systems into `assets/screenshots/`.
+- [x] Integrated real DTOCS screenshots (`assets/screenshots/dtocs/screenshots/`).
+- [x] Integrated real Essentials Hub screenshots (`assets/screenshots/dtocs-essential-hub/screenshots/`).
 
 ### Phase 2: Design System & Visual Specification
 - [x] Define color palette tokens (Light Botanical Field default + Dark Forest Night).
