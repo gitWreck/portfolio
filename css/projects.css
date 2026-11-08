@@ -199,6 +199,7 @@
   justify-content: space-between;
   gap: 0.75rem;
   margin-bottom: 0.95rem;
+  flex-wrap: wrap;
 }
 
 .track-badge {
@@ -221,6 +222,33 @@
   background: var(--commercial-glow);
   color: var(--commercial-base);
   border: 1px solid var(--commercial-border);
+}
+
+.card-meta-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.project-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.project-date svg {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.card-meta-separator {
+  color: var(--border-medium);
+  user-select: none;
 }
 
 .project-status {
