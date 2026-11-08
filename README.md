@@ -54,8 +54,8 @@ This portfolio is architected around two complementary engineering strengths:
 | **UPLB OCS** | **DTOCS-CFNR: Document Tracker & Kiosk Management System** | PHP 5.5+/8.x, MySQL/MariaDB, Node.js WebSockets, DataTables, Chart.js 4.4 | Real-Time Queue Sync, CSAR Live Integration, 9 Screenshots |
 | **UPLB OCS** | **Essentials Hub: Student Welfare Pantry & Resource Management Platform** | PHP (PDO), MySQL, Touchscreen Kiosk, Daily Quota Bounds, Chart.js | Daily Quota Enforcement, 100% Audit Integrity, 6 Screenshots |
 | **Commercial** | **Atlas Trucking & Multi-Hub Freight Operations Platform** | Next.js 16 (App Router), Expo 53, Firebase Firestore, Turborepo | 1,222 Commits, Multi-Island Logistics Hubs, SHA-256 Seals |
-| **Commercial** | **High-Converting Client Booking & Intake Platform** | TypeScript, Tailwind/CSS Tokens, Supabase, Twilio | 4.2x Intake Completion Rate, <5% No-Show Rate |
-| **Commercial** | **Cloud POS & Real-Time Kitchen Display System** | Vanilla JS, IndexedDB, WebSocket Hub, Thermal ESC/POS | <150ms Ticket Latency, 100% Offline Resilient PWA |
+| **Commercial** | **VOCO Operations Floor & Dispatch Workstation** | Next.js 16 (App Router), React 19, Tailwind CSS v4, PostgreSQL | Real-Time Caller Telemetry & Dispatch Workstation, 6 Screenshots |
+| **Commercial** | **VOCO Client Acquisition Portal & Staffing Platform** | Next.js 16 (Turbopack), React 19, Server Actions, PostgreSQL | 37/40 Heuristics Score, WCAG AA Compliant, 3 Screenshots |
 
 ---
 
@@ -86,7 +86,7 @@ portfolio/
 │   └── contact.js                  # One-click email copy & inquiry brief validation
 └── assets/
     ├── graphics/                   # High-res publication materials & infographic designs
-    └── screenshots/                # Real-world system screenshots (DTOCS, Essentials Hub, Atlas)
+    └── screenshots/                # Real-world system screenshots (DTOCS, Essentials Hub, Atlas, VOCO)
 ```
 
 ---

@@ -102,9 +102,11 @@ graph TD
   - *Essentials Hub: Student Welfare Pantry & Resource Management Platform* (`dtocs-essential-hub`)
 - [x] Select 3 commercial/client projects with outcomes:
   - *Atlas Trucking & Multi-Hub Freight Operations Platform* (`atlas-trucking` — 1,222 commits, Next.js 16 monorepo)
-  - *High-Converting Client Booking & Intake Platform* (`saas-scheduler`)
-  - *Cloud POS & Real-Time Kitchen Display System* (`retail-pos`)
-- [x] Integrate real Atlas Trucking platform screenshots (`assets/screenshots/atlas/screenshots/08_admin_dashboard.png`).
+  - *VOCO Operations Floor & Dispatch Workstation* (`va-voco-admin-side` — Next.js 16, PostgreSQL pg pool, caller workstation)
+  - *VOCO Client Acquisition Portal & Staffing Platform* (`va-voco-client-side` — Next.js 16 Server Actions, WCAG AA)
+- [x] Integrate real Atlas Trucking platform screenshots (12 web & mobile captures).
+- [x] Integrate real VOCO Operations Floor platform screenshots (6 workstation captures).
+- [x] Integrate real VOCO Client Acquisition Portal platform screenshots (3 landing & capabilities captures).
 - [x] Integrated real DTOCS screenshots (`assets/screenshots/dtocs/screenshots/`).
 - [x] Integrated real Essentials Hub screenshots (`assets/screenshots/dtocs-essential-hub/screenshots/`).
 

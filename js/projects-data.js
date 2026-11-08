@@ -181,51 +181,87 @@ const PROJECT_DETAILS = {
       }
     ]
   },
-  'saas-scheduler': {
-    id: 'saas-scheduler',
-    title: 'High-Converting Client Booking & Intake Platform',
-    tagline: 'Bespoke intake scheduling solution for professional consulting and medical clinics.',
+  'va-voco-admin-side': {
+    id: 'va-voco-admin-side',
+    title: 'VOCO Operations Floor & Dispatch Workstation',
+    tagline: 'High-throughput caller workstation, real-time call dispatching, and live floor telemetry platform for international BPO operations.',
     track: 'commercial',
-    trackLabel: 'Commercial Client Product',
-    badgeText: 'Commercial Client',
-    status: 'Deployed Client Product',
-    browserUrl: 'book.consultingclinic.io',
-    previewImg: 'assets/screenshots/saas-scheduler.gif',
-    previewAlt: 'Commercial Booking Platform',
-    hasPlaceholder: true,
-    placeholderHint: 'Drop <code>saas-scheduler.gif</code> / <code>.png</code> in <code>assets/screenshots/</code>',
-    summary: 'Custom scheduling solution designed for professional consultancies. Features multi-timezone calendar synchronization, automated SMS reminders, and integrated intake forms.',
-    tags: ['React', 'Next.js', 'Supabase', 'Google Apps Script', 'Twilio API'],
-    cardMetric: '4.2x intake form completion',
-    stack: 'React, Next.js, TypeScript, Supabase, Google Apps Script API, Twilio SMS',
-    metric: '4.2x intake completion rate',
-    scope: 'SaaS Platform Deployment',
-    problem: 'Standard off-the-shelf booking tools lacked dynamic intake form branching, multi-staff calendar priority rules, and automated localized SMS appointment confirmations.',
-    solution: 'Built a specialized booking flow with dynamic questionnaire routing, two-way calendar sync (Google/Outlook), and automated timezone conversion for international clients.',
-    outcome: 'Client no-show rate plummeted from 24% to under 5%. Client self-reported intake completion rate increased 4.2x due to streamlined mobile step UX.'
+    trackLabel: 'VOCO Global Solutions Inc.',
+    badgeText: 'VOCO Global Solutions Inc.',
+    status: 'Production Operations Floor',
+    browserUrl: 'admin.vocoglobal.com/dashboard',
+    previewImg: 'assets/screenshots/va-voco-admin-side/screenshots/01_dashboard.png',
+    previewAlt: 'VOCO Operations Floor Dashboard & Floor Telemetry',
+    summary: 'Enterprise caller workstation and operations telemetry system powering real-time call dispatching, task tracking, ticket resolution workflows, and floor team telemetry with PostgreSQL connection pooling.',
+    tags: ['Next.js 16', 'React 19', 'Tailwind CSS v4', 'PostgreSQL (pg)', 'RBAC'],
+    cardMetric: 'Real-Time Floor Telemetry · RBAC',
+    stack: 'Next.js 16 (App Router), React 19, Tailwind CSS v4, PostgreSQL (pg pool), AuthContext RBAC',
+    metric: 'Real-Time Caller Telemetry & Dispatch Workstation',
+    scope: 'Production Operations Floor (VOCO Global Solutions)',
+    problem: 'Supervising distributed callers, inbound client leads, and urgent support tickets across disparate spreadsheets caused blind spots in caller presence, unassigned client inquiries, and high ticket resolution delays.',
+    solution: 'Architected a centralized operational workstation featuring distraction-free caller modes, live shift timers (LiveClock), real-time call note loggers (NoteLogger), Cmd+K global search, multi-tier ticket dispatch, and polled notifications backed by a parameterized PostgreSQL connection pool.',
+    outcome: 'Eliminated inquiry triage delays. Delivered zero-latency floor presence telemetry, full audit logging for compliance, and WCAG AA accessibility across all workstation layers.',
+    screenshots: [
+      {
+        title: 'Live Operations Dashboard & Floor Telemetry',
+        url: 'assets/screenshots/va-voco-admin-side/screenshots/01_dashboard.png'
+      },
+      {
+        title: 'Operational Task Queue & Multi-Filter Toolbar',
+        url: 'assets/screenshots/va-voco-admin-side/screenshots/02_my_tasks.png'
+      },
+      {
+        title: 'Live Team Floor Telemetry & Presence Roster',
+        url: 'assets/screenshots/va-voco-admin-side/screenshots/04_live_floor.png'
+      },
+      {
+        title: 'Multi-Tier Ticket Dispatch & Resolution Board',
+        url: 'assets/screenshots/va-voco-admin-side/screenshots/05_task_dispatch.png'
+      },
+      {
+        title: 'Client Directory & Account Profile Management',
+        url: 'assets/screenshots/va-voco-admin-side/screenshots/06_manage_clients.png'
+      },
+      {
+        title: 'System Audit Trail & Session Activity Logs',
+        url: 'assets/screenshots/va-voco-admin-side/screenshots/07_activity_logs.png'
+      }
+    ]
   },
-  'retail-pos': {
-    id: 'retail-pos',
-    title: 'Cloud POS & Real-Time Kitchen Display System',
-    tagline: 'Offline-first progressive web application powering multi-station restaurant operations.',
+  'va-voco-client-side': {
+    id: 'va-voco-client-side',
+    title: 'VOCO Client Acquisition Portal & Staffing Platform',
+    tagline: 'Accessible, high-converting client acquisition portal with interactive service discovery and server-action intake.',
     track: 'commercial',
-    trackLabel: 'Commercial Client Product',
-    badgeText: 'Commercial Client',
-    status: 'Deployed Client Product',
-    browserUrl: 'pos.restaurantcloud.app',
-    previewImg: 'assets/screenshots/retail-pos.gif',
-    previewAlt: 'Commercial Restaurant POS',
-    hasPlaceholder: true,
-    placeholderHint: 'Drop <code>retail-pos.gif</code> / <code>.png</code> in <code>assets/screenshots/</code>',
-    summary: 'Progressive web application powering multi-station restaurant ordering, real-time ticket routing to kitchen displays via WebSockets, and end-of-day revenue reconciliation.',
-    tags: ['JavaScript (ES6+)', 'Node.js', 'WebSockets', 'Android Touchscreen', 'Java POS'],
-    cardMetric: '<150ms ticket latency',
-    stack: 'JavaScript (ES6+), Node.js, WebSockets, HTML5/CSS3, Android / Java Thermal ESC/POS',
-    metric: '<150ms order delivery, 100% offline resilient',
-    scope: 'Multi-branch Commercial Deployment',
-    problem: 'Frequent restaurant internet interruptions caused lost tickets and frustrated staff using cloud-only point-of-sale systems.',
-    solution: 'Engineered an offline-first PWA using IndexedDB for local order persistence and optimistic UI updates. When connection drops, orders queue locally and sync automatically upon reconnection.',
-    outcome: 'Eliminated service downtime during outages. Ticket delivery latency between ordering tablets and kitchen stations reduced to under 150 milliseconds.'
+    trackLabel: 'VOCO Global Solutions Inc.',
+    badgeText: 'VOCO Global Solutions Inc.',
+    status: 'Production Client Portal',
+    browserUrl: 'vocoglobal.com',
+    previewImg: 'assets/screenshots/va-voco-client-side/screenshots/01_home.png',
+    previewAlt: 'VOCO Client Portal Interface',
+    summary: 'Modern, accessible single-page web platform for virtual staffing and BPO services. Features WCAG AA contrast compliance, accessible service detail modals, and Next.js 16 Server Actions for parameterized SQL lead ingestion.',
+    tags: ['Next.js 16', 'React 19', 'Tailwind CSS v4', 'Server Actions', 'PostgreSQL', 'WCAG AA'],
+    cardMetric: '37/40 Heuristics · WCAG AA Compliant',
+    stack: 'Next.js 16 (Turbopack), React 19, Tailwind CSS v4, Next.js Server Actions, PostgreSQL (pg)',
+    metric: '37/40 Heuristics Score · WCAG AA Compliant',
+    scope: 'Production Client Surface (VOCO Global Solutions)',
+    problem: 'Legacy BPO agency websites suffered from slow load times, poor mobile ergonomics, failing color contrast ratios, and unvalidated client intake forms that leaked or dropped prospective client leads.',
+    solution: 'Designed a high-performance single-page web platform with accessible WCAG AA design tokens, interactive service catalog modals, slideout mobile drawer navigation, and Next.js 16 Server Actions executing parameterized SQL queries into PostgreSQL.',
+    outcome: 'Scored 37/40 on Impeccable design heuristic evaluation with zero WCAG AA color contrast violations, sub-second page loads, and direct pipeline integration feeding inquiries into the caller operations floor.',
+    screenshots: [
+      {
+        title: 'High-Converting Client Acquisition Landing & Hero',
+        url: 'assets/screenshots/va-voco-client-side/screenshots/01_home.png'
+      },
+      {
+        title: 'Company Mission, Trust Metrics & Capability Highlights',
+        url: 'assets/screenshots/va-voco-client-side/screenshots/03_about.png'
+      },
+      {
+        title: 'Interactive Service Capabilities Grid & Detail Modals',
+        url: 'assets/screenshots/va-voco-client-side/screenshots/04_services.png'
+      }
+    ]
   }
 };
 
