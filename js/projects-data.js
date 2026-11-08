@@ -272,6 +272,51 @@ const PROJECT_DETAILS = {
         url: 'assets/screenshots/va-voco-client-side/screenshots/04_services.png'
       }
     ]
+  },
+  'symbiopic': {
+    id: 'symbiopic',
+    title: 'SymBioPic: Crop Classification & Companion Planting Platform',
+    tagline: 'Native Android application integrating on-device TensorFlow Lite ML inference with Cloud Firestore companion planting intelligence.',
+    track: 'commercial',
+    trackLabel: 'Mobile AI & AgTech Application',
+    badgeText: 'Mobile ML & AgTech',
+    status: 'Native Android / ML',
+    date: 'November 2023',
+    dateSort: '2023-11-27',
+    browserUrl: 'symbiopic.app/mobile',
+    previewImg: 'assets/screenshots/symbiopic/screenshots/01_home.png',
+    previewAlt: 'SymBioPic On-Device ML Crop Classification Dashboard',
+    summary: 'Native Android application for organic gardeners and smallholder farmers combining on-device TensorFlow Lite neural network inference with a biological companion planting guide. Identifies 14+ vegetable varieties via camera or gallery and presents beneficial companion pairings, antagonistic crops, and spacing guidelines backed by Firebase.',
+    tags: ['Android SDK (Java 8)', 'TensorFlow Lite', 'Cloud Firestore', 'Firebase Auth', 'Glide'],
+    cardMetric: 'On-Device ML · 14+ Vegetable Varieties',
+    stack: 'Java 8, Android SDK (API 23–32), TensorFlow Lite Support 0.1.0, Cloud Firestore, Firebase Realtime Database, Firebase Authentication, Glide 4.13, Material Components',
+    metric: 'On-Device ML Inference · Cloud Firestore Companion Database',
+    scope: 'Native Mobile Application (Organic Agriculture & AgTech)',
+    problem: 'Home gardeners and organic farmers struggle with accurate crop identification and lack scientific, accessible guidance on biological companion planting—often risking pest vulnerability, depleted soil nutrients, and stunted crop yields.',
+    solution: 'Architected SymBioPic: an Android application pairing on-device TensorFlow Lite ML classification models (keras.tflite) with Google Cloud Firestore companion databases. The app delivers instant offline vegetable identification via camera or gallery, displaying biological synergies (beneficial pairings), harmful companions (foes), spacing formulas, and personalized garden favorites.',
+    outcome: 'Delivered fast, low-latency on-device inference without mandatory internet connectivity. Provided actionable companion crop recommendations across 14+ vegetable varieties to optimize organic garden yields and ecological pest deterrence.',
+    screenshots: [
+      {
+        title: 'Application Home Dashboard & Vegetable Detection Hub',
+        url: 'assets/screenshots/symbiopic/screenshots/01_home.png'
+      },
+      {
+        title: 'Firebase User Authentication & Profile Security Portal',
+        url: 'assets/screenshots/symbiopic/screenshots/02_login.png'
+      },
+      {
+        title: 'On-Device TensorFlow Lite Camera Classification & Crop Prediction',
+        url: 'assets/screenshots/symbiopic/screenshots/03_camera_output.png'
+      },
+      {
+        title: 'Searchable Vegetable Directory & Variety Catalog',
+        url: 'assets/screenshots/symbiopic/screenshots/05_list.png'
+      },
+      {
+        title: 'Companion Planting Guide: Biological Benefits, Foes & Care Guidelines',
+        url: 'assets/screenshots/symbiopic/screenshots/06_details.png'
+      }
+    ]
   }
 };
 

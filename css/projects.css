@@ -147,6 +147,7 @@
 /* Media Preview Frame (GIF / Screenshot / Video) */
 .preview-media-container {
   width: 100%;
+  aspect-ratio: 16 / 10;
   background: var(--preview-bg);
   position: relative;
   display: flex;
@@ -157,7 +158,9 @@
 
 .project-media {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
   max-width: 100%;
   display: block;
 }

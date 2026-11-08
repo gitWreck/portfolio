@@ -100,13 +100,15 @@ graph TD
 - [x] Select 3 flagship university systems from the Office of the College Secretary:
   - *DTOCS-CFNR: Document Tracker & Kiosk Management System* (`dtocs-cfnr`)
   - *Essentials Hub: Student Welfare Pantry & Resource Management Platform* (`dtocs-essential-hub`)
-- [x] Select 3 commercial/client projects with outcomes:
+- [x] Select commercial & mobile applications with outcomes:
   - *Atlas Trucking & Multi-Hub Freight Operations Platform* (`atlas-trucking` — 1,222 commits, Next.js 16 monorepo)
   - *VOCO Operations Floor & Dispatch Workstation* (`va-voco-admin-side` — Next.js 16, PostgreSQL pg pool, caller workstation)
   - *VOCO Client Acquisition Portal & Staffing Platform* (`va-voco-client-side` — Next.js 16 Server Actions, WCAG AA)
+  - *SymBioPic: Crop Classification & Companion Planting Platform* (`symbiopic` — Android Java 8, TensorFlow Lite on-device ML, Firebase)
 - [x] Integrate real Atlas Trucking platform screenshots (12 web & mobile captures).
 - [x] Integrate real VOCO Operations Floor platform screenshots (6 workstation captures).
 - [x] Integrate real VOCO Client Acquisition Portal platform screenshots (3 landing & capabilities captures).
+- [x] Integrate real SymBioPic mobile ML screenshots (5 app & classification captures).
 - [x] Integrated real DTOCS screenshots (`assets/screenshots/dtocs/screenshots/`).
 - [x] Integrated real Essentials Hub screenshots (`assets/screenshots/dtocs-essential-hub/screenshots/`).
 
